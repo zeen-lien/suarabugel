@@ -803,21 +803,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 12px;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
     color: rgba(255,255,255,.7);
     cursor: pointer;
     transition: background var(--transition), color var(--transition);
-    z-index: 2;
+    z-index: 10;
+    flex-shrink: 0;
+    padding: 0;
+    font-family: inherit;
+  }
+  .nav-close svg {
+    width: 14px !important;
+    height: 14px !important;
+    display: block;
     flex-shrink: 0;
   }
-  .nav-close svg { width: 16px; height: 16px; }
-  .nav-close:hover { background: rgba(249,115,22,.15); color: var(--orange); border-color: rgba(249,115,22,.3); }
+  .nav-close:hover {
+    background: rgba(249,115,22,.2);
+    color: var(--orange);
+    border-color: rgba(249,115,22,.4);
+  }
 
   /* CTA item push ke bawah */
   .nav-cta-item {
