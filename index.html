@@ -22,24 +22,39 @@
           <span class="nav-subtitle">Desa Bugel · Jepara</span>
         </div>
       </a>
+      <!-- Desktop nav links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#tentang" class="nav-link">Tentang</a></li>
+        <li><a href="#potensi" class="nav-link">Potensi</a></li>
+        <li><a href="#perangkat" class="nav-link">Perangkat</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#aspirasi" class="nav-link nav-cta">Kirim Aspirasi</a></li>
+      </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Sidebar & backdrop di luar nav agar tidak ter-clip -->
+  <!-- Mobile sidebar (diisi oleh JS) -->
+  <div class="mobile-sidebar" id="mobileSidebar">
+    <div class="mobile-sidebar-header">
+      <span class="mobile-sidebar-label">NAVIGASI</span>
+      <button class="nav-close" id="navClose" aria-label="Tutup menu">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#tentang" class="mobile-nav-link">Tentang</a></li>
+      <li><a href="#potensi" class="mobile-nav-link">Potensi</a></li>
+      <li><a href="#perangkat" class="mobile-nav-link">Perangkat</a></li>
+      <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+      <li class="mobile-nav-cta-item">
+        <a href="#aspirasi" class="mobile-nav-cta">Kirim Aspirasi</a>
+      </li>
+    </ul>
+  </div>
   <div class="nav-backdrop" id="navBackdrop"></div>
-  <ul class="nav-links" id="navLinks">
-    <button class="nav-close" id="navClose" aria-label="Tutup menu">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <li><a href="#tentang" class="nav-link">Tentang</a></li>
-    <li><a href="#potensi" class="nav-link">Potensi</a></li>
-    <li><a href="#perangkat" class="nav-link">Perangkat</a></li>
-    <li><a href="#faq" class="nav-link">FAQ</a></li>
-    <li class="nav-cta-item"><a href="#aspirasi" class="nav-link nav-cta">Kirim Aspirasi</a></li>
-  </ul>
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero" id="hero">

@@ -12,19 +12,19 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ---------- HAMBURGER ---------- */
-const hamburger  = document.getElementById('hamburger');
-const navLinks   = document.getElementById('navLinks');
+const hamburger   = document.getElementById('hamburger');
 const navBackdrop = document.getElementById('navBackdrop');
+const mobileSidebar = document.getElementById('mobileSidebar');
+const navClose    = document.getElementById('navClose');
 
 let scrollPos = 0;
 
 function openMenu() {
   scrollPos = window.scrollY;
-  navLinks.classList.add('open');
+  mobileSidebar.classList.add('open');
   navBackdrop.classList.add('open');
   hamburger.classList.add('active');
   hamburger.setAttribute('aria-expanded', 'true');
-  // Lock body scroll tanpa loncat ke atas
   document.body.style.overflow = 'hidden';
   document.body.style.position = 'fixed';
   document.body.style.top = `-${scrollPos}px`;
@@ -32,11 +32,10 @@ function openMenu() {
 }
 
 function closeMenu() {
-  navLinks.classList.remove('open');
+  mobileSidebar.classList.remove('open');
   navBackdrop.classList.remove('open');
   hamburger.classList.remove('active');
   hamburger.setAttribute('aria-expanded', 'false');
-  // Restore scroll
   document.body.style.overflow = '';
   document.body.style.position = '';
   document.body.style.top = '';
@@ -45,14 +44,11 @@ function closeMenu() {
 }
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.contains('open') ? closeMenu() : openMenu();
+  mobileSidebar.classList.contains('open') ? closeMenu() : openMenu();
 });
 navBackdrop.addEventListener('click', closeMenu);
-navLinks.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
-
-// Tombol X close
-const navClose = document.getElementById('navClose');
 if (navClose) navClose.addEventListener('click', closeMenu);
+mobileSidebar.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(l => l.addEventListener('click', closeMenu));
 
 /* ---------- PARALLAX ---------- */
 const heroBg       = document.querySelector('.hero-bg');
@@ -135,11 +131,13 @@ backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 /* ---------- ACTIVE NAV ON SCROLL ---------- */
 const sections = document.querySelectorAll('section[id], footer[id]');
 const navItems = document.querySelectorAll('.nav-links .nav-link:not(.nav-cta)');
+const mobileNavItems = document.querySelectorAll('.mobile-nav-link');
 const secObs   = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     const id = e.target.getAttribute('id');
     navItems.forEach(item => item.classList.toggle('active-link', item.getAttribute('href') === `#${id}`));
+    mobileNavItems.forEach(item => item.classList.toggle('active-link', item.getAttribute('href') === `#${id}`));
   });
 }, { threshold: 0.35 });
 sections.forEach(s => secObs.observe(s));
