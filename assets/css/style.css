@@ -1,5 +1,7 @@
 /* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* Prevent SVG from rendering at massive default size */
+svg{overflow:hidden;vertical-align:middle}
 :root{
   --navy:#0f172a;--navy-mid:#1e3a5f;--orange:#f97316;--orange-dark:#ea6c0a;
   --white:#ffffff;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;
@@ -169,19 +171,62 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .potensi-list li{font-size:.78rem;color:var(--gray-600);padding-left:.9rem;position:relative}
 .potensi-list li::before{content:'›';position:absolute;left:0;color:var(--orange);font-weight:700}
 
-/* ===== PERANGKAT ===== */
-.perangkat{background:var(--white)}
-.perangkat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-.perangkat-card{display:flex;align-items:center;gap:1rem;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.25rem 1.5rem;transition:all var(--transition)}
-.perangkat-card:hover{border-color:var(--orange);background:rgba(249,115,22,.04);transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.perangkat-card.kepala{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-color:rgba(249,115,22,.4);grid-column:span 3;max-width:420px;margin:0 auto;width:100%;box-shadow:var(--shadow-lg)}
-.perangkat-card.kepala .perangkat-jabatan{color:var(--orange)}
-.perangkat-card.kepala .perangkat-nama{color:var(--white)}
-.perangkat-card.kepala .perangkat-avatar{background:rgba(249,115,22,.15);color:var(--orange)}
-.perangkat-avatar{width:46px;height:46px;background:var(--gray-200);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gray-600)}
-.perangkat-avatar svg{width:22px;height:22px}
-.perangkat-jabatan{display:block;font-size:.68rem;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.perangkat-nama{font-size:.875rem;color:var(--navy);font-weight:600;margin-top:.15rem}
+/* ===== PERANGKAT - ORG CHART ===== */
+.perangkat{background:var(--gray-50)}
+
+/* Tier wrapper */
+.org-tier{display:flex;justify-content:center;gap:1rem;position:relative}
+.org-tier-3{gap:.85rem;flex-wrap:wrap}
+
+/* Connector line between tiers */
+.org-connector{width:2px;height:32px;background:linear-gradient(to bottom,var(--orange),rgba(249,115,22,.2));margin:0 auto;border-radius:1px}
+
+/* Base card */
+.org-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all var(--transition);position:relative;overflow:hidden}
+.org-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange);border-radius:3px 0 0 3px;opacity:0;transition:opacity var(--transition)}
+.org-card:hover{border-color:var(--orange);box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.org-card:hover::before{opacity:1}
+
+/* Kepala Desa card */
+.org-kepala{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-color:rgba(249,115,22,.3);box-shadow:var(--shadow-lg);min-width:320px;padding:1.5rem 2rem}
+.org-kepala::before{background:var(--orange);opacity:1}
+.org-kepala:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(15,23,42,.35)}
+
+/* Sekdes card */
+.org-sekdes{background:linear-gradient(135deg,#1a2a4a 0%,#1e3a5f 100%);border-color:rgba(249,115,22,.2);min-width:280px;box-shadow:var(--shadow-md)}
+.org-sekdes::before{opacity:1}
+
+/* Tier 3 cards */
+.org-tier-3 .org-card{min-width:0;flex:1;flex-basis:calc(33.333% - .57rem);max-width:calc(33.333% - .57rem);padding:1.1rem 1.25rem}
+
+/* Avatar */
+.org-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(249,115,22,.08);color:var(--orange)}
+.org-kepala .org-avatar{width:56px;height:56px;background:rgba(249,115,22,.2);color:var(--orange)}
+.org-sekdes .org-avatar{background:rgba(249,115,22,.15);color:var(--orange)}
+.org-tier-3 .org-card .org-avatar{width:40px;height:40px}
+.org-avatar svg{width:24px;height:24px;display:block;flex-shrink:0}
+.org-kepala .org-avatar svg{width:28px;height:28px}
+
+/* Info */
+.org-jabatan{display:block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:.2rem}
+.org-kepala .org-jabatan,.org-sekdes .org-jabatan{color:var(--orange)}
+.org-tier-3 .org-card .org-jabatan{color:var(--orange)}
+.org-nama{font-size:.95rem;font-weight:700;color:var(--white);line-height:1.3}
+.org-tier-3 .org-card .org-nama{font-size:.875rem;color:var(--navy)}
+.org-kontak{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.4rem;transition:color var(--transition)}
+.org-kontak:hover{color:var(--orange)}
+
+.perangkat-note{text-align:center;margin-top:2rem;font-size:.78rem;color:var(--gray-400);font-style:italic}
+
+/* Responsive */
+@media(max-width:768px){
+  .org-tier-3 .org-card{flex-basis:calc(50% - .43rem);max-width:calc(50% - .43rem)}
+  .org-kepala,.org-sekdes{min-width:0;width:100%;max-width:420px}
+}
+@media(max-width:480px){
+  .org-tier-3 .org-card{flex-basis:100%;max-width:100%}
+  .org-tier-3 .org-card .org-avatar{display:none}
+}
 
 /* ===== ASPIRASI ===== */
 .aspirasi{background:var(--gray-50)}
@@ -193,7 +238,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .aspirasi-icon-wrap{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
 .aspirasi-card.whatsapp .aspirasi-icon-wrap{background:rgba(37,211,102,.1);color:#25d366}
 .aspirasi-card.form .aspirasi-icon-wrap{background:rgba(249,115,22,.1);color:var(--orange)}
-.aspirasi-icon-wrap svg{width:32px;height:32px}
+.aspirasi-icon-wrap svg{width:32px;height:32px;display:block;flex-shrink:0;max-width:32px;max-height:32px}
 .aspirasi-card h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin-bottom:.6rem}
 .aspirasi-card>p{color:var(--gray-600);font-size:.875rem;margin-bottom:1.5rem;line-height:1.7}
 .form-note{font-size:.72rem;color:var(--gray-400);margin-top:.65rem!important;margin-bottom:0!important}
@@ -285,8 +330,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .hero-br{display:none}
   .tentang-grid{grid-template-columns:1fr}
   .perangkat-grid{grid-template-columns:1fr 1fr}
-  .perangkat-card.kepala{grid-column:span 2}
-  .aspirasi-grid{grid-template-columns:1fr}
+  .perangkat-card.kepala{grid-column:span 2}  .aspirasi-grid{grid-template-columns:1fr}
   .qr-content{flex-direction:column;text-align:center;gap:2rem}
   .footer-grid{grid-template-columns:1fr;gap:2rem}
   .footer-brand{grid-column:span 1}

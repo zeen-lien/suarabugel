@@ -338,62 +338,92 @@
         <h2 class="section-title">Struktur <span class="orange">Perangkat Desa</span></h2>
         <p class="section-desc">Jajaran perangkat Desa Bugel yang siap melayani masyarakat.</p>
       </div>
-      <div class="perangkat-grid">
-        <div class="perangkat-card kepala" data-aos="fade-up">
-          <div class="perangkat-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+
+      <!-- Tier 1: Kepala Desa -->
+      <div class="org-tier org-tier-1" data-aos="fade-up">
+        <div class="org-card org-kepala">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <div class="perangkat-info">
-            <span class="perangkat-jabatan">Plt. Kepala Desa</span>
-            <h4 class="perangkat-nama">Henri Khoiril Timur</h4>
-          </div>
-        </div>
-        <div class="perangkat-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="perangkat-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="perangkat-info">
-            <span class="perangkat-jabatan">Sekretaris Desa</span>
-            <h4 class="perangkat-nama">[ Nama Sekdes ]</h4>
-          </div>
-        </div>
-        <div class="perangkat-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="perangkat-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="perangkat-info">
-            <span class="perangkat-jabatan">Kaur Keuangan</span>
-            <h4 class="perangkat-nama">[ Nama Kaur ]</h4>
-          </div>
-        </div>
-        <div class="perangkat-card" data-aos="fade-up" data-aos-delay="240">
-          <div class="perangkat-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="perangkat-info">
-            <span class="perangkat-jabatan">Kaur Tata Usaha & Umum</span>
-            <h4 class="perangkat-nama">[ Nama Kaur ]</h4>
-          </div>
-        </div>
-        <div class="perangkat-card" data-aos="fade-up" data-aos-delay="320">
-          <div class="perangkat-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="perangkat-info">
-            <span class="perangkat-jabatan">Kasi Pemerintahan</span>
-            <h4 class="perangkat-nama">[ Nama Kasi ]</h4>
-          </div>
-        </div>
-        <div class="perangkat-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="perangkat-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="perangkat-info">
-            <span class="perangkat-jabatan">Kasi Kesejahteraan</span>
-            <h4 class="perangkat-nama">[ Nama Kasi ]</h4>
+          <div class="org-info">
+            <span class="org-jabatan">Plt. Kepala Desa</span>
+            <h4 class="org-nama">Henri Khoiril Timur</h4>
+            <a href="https://wa.me/6282240915588" class="org-kontak" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              082-2409-1558
+            </a>
           </div>
         </div>
       </div>
+
+      <!-- Connector line -->
+      <div class="org-connector" data-aos="fade-up" data-aos-delay="50"></div>
+
+      <!-- Tier 2: Sekdes -->
+      <div class="org-tier org-tier-2" data-aos="fade-up" data-aos-delay="100">
+        <div class="org-card org-sekdes">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="org-info">
+            <span class="org-jabatan">Sekretaris Desa</span>
+            <h4 class="org-nama">[ Nama Sekdes ]</h4>
+            <a href="https://wa.me/6281390943953" class="org-kontak" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              081-3909-4395
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connector line -->
+      <div class="org-connector" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <!-- Tier 3: Kaur & Kasi -->
+      <div class="org-tier org-tier-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="org-card">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="org-info">
+            <span class="org-jabatan">Kaur Keuangan</span>
+            <h4 class="org-nama">[ Nama Kaur ]</h4>
+          </div>
+        </div>
+        <div class="org-card">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="org-info">
+            <span class="org-jabatan">Kaur TU & Umum</span>
+            <h4 class="org-nama">[ Nama Kaur ]</h4>
+          </div>
+        </div>
+        <div class="org-card">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="org-info">
+            <span class="org-jabatan">Kaur Perencanaan</span>
+            <h4 class="org-nama">[ Nama Kaur ]</h4>
+          </div>
+        </div>
+        <div class="org-card">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="org-info">
+            <span class="org-jabatan">Kasi Pemerintahan</span>
+            <h4 class="org-nama">[ Nama Kasi ]</h4>
+          </div>
+        </div>
+        <div class="org-card">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="org-info">
+            <span class="org-jabatan">Kasi Kesejahteraan</span>
+            <h4 class="org-nama">[ Nama Kasi ]</h4>
+          </div>
+        </div>
+        <div class="org-card">
+          <div class="org-avatar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="org-info">
+            <span class="org-jabatan">Kasi Pelayanan</span>
+            <h4 class="org-nama">[ Nama Kasi ]</h4>
+          </div>
+        </div>
+      </div>
+
+      <p class="perangkat-note" data-aos="fade-up">* Data nama perangkat akan diperbarui setelah observasi lapangan.</p>
     </div>
   </section>
 
@@ -408,7 +438,7 @@
       <div class="aspirasi-grid">
         <div class="aspirasi-card whatsapp" data-aos="fade-right">
           <div class="aspirasi-icon-wrap">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           </div>
           <h3>Via WhatsApp</h3>
           <p>Kirim aspirasi langsung ke perangkat desa melalui WhatsApp. Respon cepat dan personal.</p>
