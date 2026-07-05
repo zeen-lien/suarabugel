@@ -50,6 +50,10 @@ hamburger.addEventListener('click', () => {
 navBackdrop.addEventListener('click', closeMenu);
 navLinks.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
 
+// Tombol X close
+const navClose = document.getElementById('navClose');
+if (navClose) navClose.addEventListener('click', closeMenu);
+
 /* ---------- PARALLAX ---------- */
 const heroBg       = document.querySelector('.hero-bg');
 const visiParallax = document.getElementById('visiParallax');

@@ -72,7 +72,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-title-wrap { display: flex; flex-direction: column; line-height: 1.15; }
 .nav-title { font-size: 1.35rem; font-weight: 800; color: var(--white); letter-spacing: -.3px; font-family: 'Poppins', sans-serif; }
 .nav-subtitle { font-size: .62rem; color: rgba(255,255,255,.45); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
-.nav-links { display: flex; align-items: center; gap: .15rem; margin-left: auto; }
+
+/* Desktop: nav-links inline di navbar */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: .15rem;
+  margin-left: auto;
+  list-style: none;
+  position: static;
+  transform: none !important;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  flex-direction: row;
+  z-index: auto;
+}
 .nav-link {
   color: rgba(255,255,255,.75); font-size: .85rem; font-weight: 500;
   padding: .5rem 1rem; border-radius: var(--radius-sm);
@@ -677,95 +696,146 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hamburger { display: flex; }
   .nav-backdrop { display: block; }
 
-  /* ── Sidebar ── */
+  /* Desktop nav-links disembunyikan */
   .nav-links {
-    position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: 280px;
-    max-width: 85vw;
-    background: #0b1628;
-    border-left: 1px solid rgba(249,115,22,.2);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 0;
-    padding: 0;
-    transform: translateX(100%);
-    transition: transform .32s cubic-bezier(.4,0,.2,1);
-    z-index: 1001;
-    box-shadow: -20px 0 60px rgba(0,0,0,.6);
-    overflow-y: auto;
-    overflow-x: hidden;
+    /* Override semua desktop styles */
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: 280px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    background: #0c1829 !important;
+    border-left: 1px solid rgba(249,115,22,.2) !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-top: 56px !important;
+    transform: translateX(100%) !important;
+    transition: transform .32s cubic-bezier(.4,0,.2,1) !important;
+    z-index: 1050 !important;
+    box-shadow: -20px 0 60px rgba(0,0,0,.6) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    min-height: 100vh !important;
   }
-  .nav-links.open { transform: translateX(0); }
-
-  /* Header label sidebar — pakai li pertama sebagai header visual via CSS */
+  .nav-links.open {
+    transform: translateX(0) !important;
+  }
   .nav-links::before {
     content: 'NAVIGASI';
     display: block;
     width: 100%;
-    padding: 1.1rem 1.5rem;
-    font-size: .62rem;
+    padding: 1rem 1.5rem;
+    font-size: .6rem;
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: rgba(249,115,22,.75);
     background: rgba(249,115,22,.06);
-    border-bottom: 1px solid rgba(249,115,22,.15);
+    border-bottom: 1px solid rgba(249,115,22,.12);
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
-    flex-shrink: 0;
   }
-
-  /* Li items */
   .nav-links li {
     width: 100%;
     flex-shrink: 0;
   }
-
-  /* Nav links inside sidebar */
   .nav-link {
-    display: block;
+    display: block !important;
     width: 100%;
     font-size: .95rem;
     font-weight: 500;
-    color: rgba(255,255,255,.7);
-    padding: .95rem 1.5rem;
+    color: rgba(255,255,255,.7) !important;
+    padding: .95rem 1.5rem !important;
     border-bottom: 1px solid rgba(255,255,255,.05);
-    border-radius: 0;
+    border-radius: 0 !important;
     text-align: left;
     transition: background var(--transition), color var(--transition), padding-left var(--transition);
+    margin: 0;
   }
-  .nav-link::after { display: none; }
-  .nav-link:hover { background: rgba(249,115,22,.07); color: var(--white); padding-left: 2rem; }
-  .nav-link.active-link { color: var(--orange); background: rgba(249,115,22,.05); }
-
-  /* CTA tombol di item terakhir */
+  .nav-link::after { display: none !important; }
+  .nav-link:hover {
+    background: rgba(249,115,22,.07);
+    color: var(--white) !important;
+    padding-left: 2rem !important;
+  }
+  .nav-link.active-link {
+    color: var(--orange) !important;
+    background: rgba(249,115,22,.05);
+  }
   .nav-links li:last-child {
     padding: 1.25rem 1.5rem;
     border-bottom: none;
   }
   .nav-cta {
-    display: block;
+    display: block !important;
     width: 100%;
-    background: var(--orange);
+    background: var(--orange) !important;
     color: var(--white) !important;
-    padding: .8rem 1.5rem;
-    border-radius: var(--radius-sm);
+    padding: .8rem 1.5rem !important;
+    border-radius: var(--radius-sm) !important;
     font-weight: 700;
     font-size: .9rem;
     text-align: center;
-    margin-left: 0;
+    margin: 0 !important;
     box-shadow: 0 4px 16px rgba(249,115,22,.3);
   }
-  .nav-cta:hover { background: var(--orange-dark); transform: none; padding-left: 1.5rem; }
-  .nav-cta::after { display: none; }
+  .nav-cta:hover {
+    background: var(--orange-dark) !important;
+    transform: none !important;
+    padding-left: .8rem !important;
+  }
+  .nav-cta::after { display: none !important; }
+
+  /* Tombol X close sidebar */
+  .nav-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    z-index: 2;
+    flex-shrink: 0;
+  }
+  .nav-close svg { width: 16px; height: 16px; }
+  .nav-close:hover { background: rgba(249,115,22,.15); color: var(--orange); border-color: rgba(249,115,22,.3); }
+
+  /* CTA item push ke bawah */
+  .nav-cta-item {
+    margin-top: auto !important;
+    padding: 1.5rem 1.5rem !important;
+    border-top: 1px solid rgba(255,255,255,.07) !important;
+    border-bottom: none !important;
+  }
 
   /* Backdrop */
   .nav-backdrop {
-    display: block; position: fixed; inset: 0;
-    background: rgba(0,0,0,.55); backdrop-filter: blur(4px);
-    z-index: 999; opacity: 0; pointer-events: none;
-    transition: opacity .35s ease;
+    display: block;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(4px);
+    z-index: 1040;
+    opacity: 0; pointer-events: none;
+    transition: opacity .32s ease;
   }
   .nav-backdrop.open { opacity: 1; pointer-events: auto; }
 
