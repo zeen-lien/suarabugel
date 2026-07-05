@@ -49,6 +49,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   backdrop-filter: blur(16px);
   box-shadow: 0 2px 24px rgba(0,0,0,.35);
   padding: .6rem 0;
+}
+/* Sync nav-links height saat navbar scrolled */
+.navbar.scrolled ~ .nav-links {
+  height: 58px;
 }.nav-container {
   max-width: 1200px; margin: 0 auto; padding: 0 2.5rem;
   display: flex; align-items: center; justify-content: space-between;
@@ -78,20 +82,29 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: .15rem;
-  margin-left: auto;
   list-style: none;
-  position: static;
-  transform: none !important;
+  position: fixed;
+  top: 0;
+  right: 2.5rem;
+  height: 68px;
+  transform: none;
   background: transparent;
   border: none;
   box-shadow: none;
   padding: 0;
   width: auto;
-  height: auto;
   overflow: visible;
   flex-direction: row;
-  z-index: auto;
+  z-index: 1001;
+  transition: height var(--transition);
 }
+/* Saat navbar scrolled, height menyesuaikan */
+.navbar.scrolled ~ .nav-links {
+  height: 56px;
+}
+
+/* Sembunyikan close button di desktop */
+.nav-close { display: none; }
 .nav-link {
   color: rgba(255,255,255,.75); font-size: .85rem; font-weight: 500;
   padding: .5rem 1rem; border-radius: var(--radius-sm);
