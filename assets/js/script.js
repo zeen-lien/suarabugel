@@ -16,19 +16,32 @@ const hamburger  = document.getElementById('hamburger');
 const navLinks   = document.getElementById('navLinks');
 const navBackdrop = document.getElementById('navBackdrop');
 
+let scrollPos = 0;
+
 function openMenu() {
+  scrollPos = window.scrollY;
   navLinks.classList.add('open');
   navBackdrop.classList.add('open');
   hamburger.classList.add('active');
   hamburger.setAttribute('aria-expanded', 'true');
+  // Lock body scroll tanpa loncat ke atas
   document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPos}px`;
+  document.body.style.width = '100%';
 }
+
 function closeMenu() {
   navLinks.classList.remove('open');
   navBackdrop.classList.remove('open');
   hamburger.classList.remove('active');
   hamburger.setAttribute('aria-expanded', 'false');
+  // Restore scroll
   document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, scrollPos);
 }
 
 hamburger.addEventListener('click', () => {
