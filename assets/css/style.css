@@ -677,90 +677,88 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hamburger { display: flex; }
   .nav-backdrop { display: block; }
 
-  /* Sidebar slide dari kanan */
+  /* ── Sidebar ── */
   .nav-links {
-    position: fixed; top: 0; right: 0; bottom: 0;
-    width: min(300px, 82vw);
-    background: linear-gradient(180deg, #0b1628 0%, #0f1e3a 100%);
-    border-left: 1px solid rgba(249,115,22,.18);
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 280px;
+    max-width: 85vw;
+    background: #0b1628;
+    border-left: 1px solid rgba(249,115,22,.2);
     flex-direction: column;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 0;
     padding: 0;
-    padding-top: 72px; /* tinggi header sidebar */
     transform: translateX(100%);
-    transition: transform .35s cubic-bezier(.4,0,.2,1);
-    z-index: 1000;
-    box-shadow: -16px 0 48px rgba(0,0,0,.55);
+    transition: transform .32s cubic-bezier(.4,0,.2,1);
+    z-index: 1001;
+    box-shadow: -20px 0 60px rgba(0,0,0,.6);
     overflow-y: auto;
+    overflow-x: hidden;
   }
-
-  /* Header sidebar */
-  .nav-links::before {
-    content: 'NAVIGASI';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 72px;
-    background: rgba(249,115,22,.07);
-    border-bottom: 1px solid rgba(249,115,22,.18);
-    display: flex; align-items: center;
-    padding: 0 1.75rem;
-    font-size: .65rem; font-weight: 700;
-    letter-spacing: 2.5px; text-transform: uppercase;
-    color: rgba(249,115,22,.7);
-  }
-
   .nav-links.open { transform: translateX(0); }
 
-  /* Setiap item nav */
-  .nav-links li { width: 100%; }
+  /* Header label sidebar — pakai li pertama sebagai header visual via CSS */
+  .nav-links::before {
+    content: 'NAVIGASI';
+    display: block;
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(249,115,22,.75);
+    background: rgba(249,115,22,.06);
+    border-bottom: 1px solid rgba(249,115,22,.15);
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
 
+  /* Li items */
+  .nav-links li {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  /* Nav links inside sidebar */
   .nav-link {
+    display: block;
+    width: 100%;
     font-size: .95rem;
     font-weight: 500;
-    color: rgba(255,255,255,.75);
-    padding: .9rem 1.75rem;
-    width: 100%;
-    display: block;
+    color: rgba(255,255,255,.7);
+    padding: .95rem 1.5rem;
     border-bottom: 1px solid rgba(255,255,255,.05);
     border-radius: 0;
+    text-align: left;
     transition: background var(--transition), color var(--transition), padding-left var(--transition);
   }
   .nav-link::after { display: none; }
-  .nav-link:hover {
-    background: rgba(249,115,22,.08);
-    color: var(--white);
-    padding-left: 2.25rem;
-  }
-  .nav-link.active-link {
-    color: var(--orange);
-    background: rgba(249,115,22,.06);
-  }
+  .nav-link:hover { background: rgba(249,115,22,.07); color: var(--white); padding-left: 2rem; }
+  .nav-link.active-link { color: var(--orange); background: rgba(249,115,22,.05); }
 
-  /* CTA di paling bawah daftar */
+  /* CTA tombol di item terakhir */
   .nav-links li:last-child {
-    padding: 1.5rem 1.75rem;
+    padding: 1.25rem 1.5rem;
     border-bottom: none;
-    margin-top: auto;
   }
   .nav-cta {
+    display: block;
+    width: 100%;
     background: var(--orange);
     color: var(--white) !important;
-    padding: .75rem 1.5rem;
+    padding: .8rem 1.5rem;
     border-radius: var(--radius-sm);
     font-weight: 700;
     font-size: .9rem;
     text-align: center;
-    display: block;
     margin-left: 0;
-    box-shadow: 0 4px 16px rgba(249,115,22,.35);
-    transition: background var(--transition), transform var(--transition);
+    box-shadow: 0 4px 16px rgba(249,115,22,.3);
   }
-  .nav-cta:hover {
-    background: var(--orange-dark);
-    transform: none;
-    padding-left: 1.5rem;
-  }
+  .nav-cta:hover { background: var(--orange-dark); transform: none; padding-left: 1.5rem; }
+  .nav-cta::after { display: none; }
 
   /* Backdrop */
   .nav-backdrop {
